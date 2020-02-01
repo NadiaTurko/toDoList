@@ -1,0 +1,17 @@
+<section id="profile" class="container">
+  <div class="row mt-5">
+    <div class="offset-lg-4 main-section text-center card">
+      <div class="row user-details">
+        <div class="col-12">
+          <h5 *ngIf="providerId != 'password'">{{user.displayName}}</h5>
+          <p>
+            {{user.email}}
+          </p>
+
+          <hr>
+          <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores suscipit itaque minima quae.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

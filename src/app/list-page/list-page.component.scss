@@ -1,0 +1,58 @@
+.form{
+  margin: auto;
+}
+
+.header h2{
+  align-items: center;
+}
+
+span{
+  color: #8b0710;
+}
+mat-card{
+  width: 550px;
+  margin: auto;
+}
+.list{
+  max-width: 700px;
+  width: 100%;
+  margin: auto;
+  border-top: 1px solid #c8c8c8;
+  border-left: 1px solid #c8c8c8;
+  border-right: 1px solid #c8c8c8;
+}
+.mat-toolbar{
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 5px ;
+}
+input{
+  width: 450px;
+}
+
+.input-group{
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+
+.example-form{
+  margin: auto;
+  padding-left: 25px;
+}
+.mat-input-element {
+  caret-color: #8b0710;
+}
+.example-spacer{
+  margin: auto;
+}
+.header{
+  width: 400px;
+  padding-left: 150px;
+  margin-bottom: 20px;
+  margin: auto;
+  background: transparent;
+  border: 1px solid #ffffff;
+}

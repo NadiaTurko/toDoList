@@ -1,0 +1,51 @@
+<mat-card>
+  <mat-card-title class="text-center">Sing-in</mat-card-title>
+  <mat-card-content>
+    <form class="login-form" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="alert alert-danger" *ngIf="authService.error$ | async as error">
+        {{error}}
+      </div>
+      <div class="alert alert-info" *ngIf="message">
+        {{message}}
+      </div>
+      <mat-form-field class="full-width" [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}">
+        <input matInput placeholder="E-mail" formControlName="email"/>
+      </mat-form-field>
+      <div
+        *ngIf="form.get('email').touched && form.get('email').invalid"
+        class="validator">
+        <small *ngIf="form.get('email').errors.required">
+          Введіть поле email
+        </small>
+        <small *ngIf="form.get('email').errors.email">
+          exmple@xyz
+        </small>
+      </div>
+      <mat-form-field class="full-width" [ngClass]="{invalid: form.get('password').touched && form.get('password').invalid}">
+        <input  matInput placeholder="Пароль" formControlName="password" />
+      </mat-form-field>
+        <div
+          *ngIf="form.get('password').touched && form.get('password').invalid"
+          class="validator">
+          <small *ngIf="form.get('email').errors.required">
+            Введіть пароль
+          </small>
+          <small *ngIf="form.get('email').errors.minlength">
+            Пароль повинен бути не менше
+            {{form.get('password').errors.minlength.requiredLenght}}
+            символів. Зараз він
+            {{form.get('password').errors.minlength.actualLenght}}
+          </small>
+        </div>
+      <button type="submit" mat-raised-button
+              class="btn btn-primary"
+              [disabled]="form.invalid || submitted">
+        Увійти
+      </button>
+    </form>
+  </mat-card-content>
+  <p class="go-to-register">
+    No account yet? <a routerLink="/user/sing-up">Create an account.</a>
+  </p>
+</mat-card>
+

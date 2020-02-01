@@ -1,0 +1,18 @@
+<mat-toolbar >
+  <a class="logo" mat-button routerLink="/">
+    <mat-icon>pen</mat-icon>
+    ToDo
+  </a>
+  <!--  <span class="flex-grow"></span>-->
+  <a routerLink="/login" class="dialog">
+    <button mat-raised-button (click)="logout($event)">Sing-in</button>
+  </a>
+  <a routerLink="/sing-up" class="dialog">
+    <button mat-raised-button>Sing-up</button>
+  </a>
+  <a class="dialog">
+    <button mat-raised-button *ngIf="authService.isAuthenticated()" (click)="logout($event)">goOut</button>
+  </a>
+</mat-toolbar>
+<router-outlet></router-outlet>
+

@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+  <a class="navbar-brand" routerLink="/">List ToDo</a>
+  <div class="collapse navbar-collapse" id="mainNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" *ngIf="!isLogged">
+        <a class="nav-link" routerLink="/user/singup">Register
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/user/profile">Profile</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/admin/list">List</a>
+      </li>
+      <li class="nav-item" *ngIf="!isLogged">
+        <a class="nav-link" routerLink="/user/login">Login
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a href="#" class="nav-link" (click)="onLogout()">Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
